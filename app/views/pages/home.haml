@@ -1,0 +1,57 @@
+= render 'layouts/banner.haml'
+.container
+  .section
+    / Icon Section
+    .row
+      .col.s12.m4
+        .icon-block
+          %h2.center.brown-text
+            %i.material-icons grade
+          %h5.center Vets Only
+          %p.light Place you job ads knowing that you will only receive applications from veterans. Less applications to review thru but better applicants.
+      .col.s12.m4
+        .icon-block
+          %h2.center.brown-text
+            %i.material-icons group
+          %h5.center Team Players
+          %p.light Those that served in the military have learned how to be part of a team. There is no bigger test than to place your life in the trust of your team.
+      .col.s12.m4
+        .icon-block
+          %h2.center.brown-text
+            %i.material-icons verified_user
+          %h5.center Certified Veterans
+          %p.light All of our job seekers are checked to verify that they are either still active duty or veterans.
+
+    .row
+      .col.s12.center-align
+        = link_to "Employer Benefits", employer_benefits_path, class: 'btn-large waves-effect waves-light blue lighten-1'
+
+
+.parallax-container.valign-wrapper
+  .section.no-pad-bot
+    .container
+      .row.center
+        %h5.header.col.s12.light They served our country. Now it is time to serve them.
+  .parallax
+    %img{:alt => "Unsplashed background img 2", :src => "assets/background2.png"}/
+.container
+  .section
+    .row
+      .col.s12.center
+        %h3
+          %i.mdi-content-send.brown-text
+        %h4 Why Us
+        %p.left-align.light
+          %blockquote
+            Getting out of the military is a huge transition. One moment Uncle Sam is taking care of you and the next, it is all up to you. When I got out, I almost went back in. Twice. And I was only in for 6 years. When I started getting into web development, there were not the resources that there are today. Now there are great resources and organizations dedicated to teaching programming to veterans. I recently joined Operation Code as a mentor. After seeing so many vets working so hard to learn programming, I decided there should be a Veteran exclusive job board. If you do not know why you should hire a veteran, then you should
+            = link_to 'read this.', employer_benefits_path
+        %p.right-align.light
+          Bob Roberts, U.S. Army Veteran
+
+.parallax-container.valign-wrapper
+  .section.no-pad-bot
+    .container
+      .row.center
+        %h5.header.col.s12.light Let's repay their service and help them to transition back to the civilian life
+  .parallax
+    %img{:alt => "Unsplashed background img 3", :src => "assets/background3.png"}/

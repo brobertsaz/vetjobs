@@ -1,0 +1,19 @@
+#index-banner
+  .parallax-container
+    .section.no-pad-bot
+      .container
+        %h1.header.center.light.grey-text.text-lighten-2 Vet Coding Jobs
+        .row.center
+          %h5.header.col.s12.light.grey-text.text-lighten-2 A veterans exclusive job board. All members are verified current or ex-military.
+        .row.center
+          %h5.light.grey-text.text-lighten-2 Leave your email, and we will let you know when the site goes live.
+          .col.s12.m6.offset-m3.contact-wrapper
+            = simple_form_for Contact.new, url: contacts_path do |f|
+              = f.input :contact_type, as: :radio_buttons, required: true, label: false, collection: [['I am a Candidate', 'c'], ['I am an Employer', 'e']], wrapper_html: { class: 's12' }
+              = f.input :email, wrapper_html: { class: 's12' }
+              = f.button :submit, 'Notify Me', class: 'btn blue lighten-1'
+            .small We will never spam you or share your info  
+        .row.center
+          = link_to "View Jobs", jobs_path, class: 'btn-large waves-effect waves-light blue lighten-1'
+    .parallax
+      %img{:alt => "Unsplashed background img 1", :src => "assets/background5.jpg"}/

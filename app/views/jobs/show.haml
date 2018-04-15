@@ -1,0 +1,33 @@
+.container
+  .row
+    .col.s12.md12.l12
+      %h4 Job Details
+      .right-align{style: "margin-top: -50px;"}
+        = link_to "All Jobs", jobs_path, class: 'btn waves-effect waves-light blue lighten-1'
+      %br
+      .card
+        .card-content.white-text
+          .card-title.grey-text.text-darken-4
+            = @job.title
+          .card-subtitle.grey-text.text-darken-4
+            = @job.location
+          %br
+          .card-subtitle.grey-text.text-darken-4
+            = @job.employer.profile.company_name
+          %br
+          .card-subtitle.grey-text.text-darken-4
+            = @job.description
+          %br
+          .card-subtitle.grey-text.text-darken-4
+            = @job.low_salary
+          %br
+          .card-subtitle.grey-text.text-darken-4
+            = @job.high_salary
+          %br
+          .card-action
+            - if current_user.present? && !current_user.is_employer?
+              - if current_user.job_applications.map(&:job_id).include?(@job.id)
+                .grey-text.text-darken-4
+                  Already Applied
+              - else
+                = link_to "Apply", job_applications_path(job_id: @job.id, user_id: current_user.id), method: :post, class: 'btn waves-effect waves-light blue lighten-1'

@@ -1,0 +1,10 @@
+%nav.blue
+  .nav-wrapper.container
+    %a#logo-container.brand-logo{:href => "/"}
+      = image_tag "logo2.png", id: 'logo-image'
+    %a.button-collapse{"data-activates" => "mobile-nav", :href => "#"}
+      %i.material-icons menu
+    .right.hide-on-med-and-down
+      = render 'layouts/login_items'
+    #mobile-nav.side-nav
+      = render 'layouts/login_items'

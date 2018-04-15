@@ -1,0 +1,14 @@
+.container
+  .row
+    .col.s12
+      %h4 Sign up
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = f.error_notification
+        = f.input :role, as: :radio_buttons, required: true, collection: ['Candidate', 'Employer'], wrapper_html: { class: 's12' }
+        = f.input :first_name, required: true, wrapper_html: { class: 's6' }
+        = f.input :last_name, required: true, wrapper_html: { class: 's6' }
+        = f.input :email, required: true, wrapper_html: { class: 's12' }
+        = f.input :password, required: true, wrapper_html: { class: 's6' }
+        = f.input :password_confirmation, required: true, wrapper_html: { class: 's6' }
+        = f.button :submit, "Sign up", wrapper_html: { class: 's12' }
+      = render "devise/shared/links"

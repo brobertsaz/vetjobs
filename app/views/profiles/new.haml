@@ -1,0 +1,12 @@
+.container
+  .row
+    .col.s8.offset-s2
+      %h4 User Profile
+      = simple_form_for @profile do |f|
+        = f.input :user_id, as: :hidden, input_html: { value: current_user.id }
+        = f.input :company_name, required: current_user.is_employer? ? true : false, wrapper_html: { class: 's12' }
+        = f.input :street_address, wrapper_html: { class: 's12' }
+        = f.input :city, wrapper_html: { class: 's8' }
+        = f.input :state, wrapper_html: { class: 's2' }
+        = f.input :zip, wrapper_html: { class: 's2' }
+        = f.button :submit, class: 'btn waves-effect waves-light blue lighten-1'

@@ -1,0 +1,12 @@
+.container
+  .row
+    .col.s12
+      %h4 Create a new job posting
+      = simple_form_for @job do |f|
+        = f.input :title, wrapper_html: { class: 's12' }
+        = f.input :location, wrapper_html: { class: 's12' }
+        = f.input :position_type, wrapper_html: { class: 's12' }
+        = f.input :description, as: :text, wrapper_html: { class: 's12' }
+        = f.input :low_salary, placeholder: 'e.g. 80,000', wrapper_html: { class: 's6' }
+        = f.input :high_salary, placeholder: 'e.g. 120,000', wrapper_html: { class: 's6' }
+        = f.button :submit, class: 'btn waves-effect waves-light blue lighten-1'

@@ -1,0 +1,19 @@
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Vetcodingjobs
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'favicon.ico'
+  %body
+    = render 'layouts/navbar'
+    = yield
+  = render 'layouts/footer'
+
+- flash.each do |type, msg|
+  :javascript
+    Materialize.toast("#{msg}", 4000, "#{type}");
+
